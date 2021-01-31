@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Dispatcher
-from telegram import ChatPermissions, ChatMember
 import logging
 import json
 import settings
@@ -52,7 +51,7 @@ def haregly_add(update, context):
 
 def start(update, context):
     update.message.reply_text(
-        f"""dostempne komędy:
+        """dostempne komędy:
 
 haregly
 haregly_add
