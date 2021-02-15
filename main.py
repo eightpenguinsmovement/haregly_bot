@@ -14,7 +14,15 @@ def haregly(update, context):
     with open("./data/haregly.json", "r") as f:
         json_ = json.loads(f.read())
     sentence = json_[randint(1, len(json_)) - 1]
-    context.bot.send_message(update.message.chat.id, sentence)
+    try:
+        reply_id = update.message["reply_to_message"].message_id
+    except AttributeError:
+        reply_id = None
+    context.bot.send_message(
+        update.message.chat.id,
+        sentence,
+        reply_to_message_id=reply_id,
+    )
     context.bot.delete_message(update.message.chat.id, update.message.message_id)
 
 
