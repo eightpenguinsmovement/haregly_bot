@@ -1,2 +1,2 @@
-python-telegram-bot
-python-dotenv
+telegrask>=0.3.4
+tinydb
